@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 
-var config = {
+/*var config = {
     user: 'rajatnegi13',
     database: 'rajatnegi13',
     host: 'rajatnegi13@ssh.imad.hasura-app.io',
@@ -22,7 +22,7 @@ app.get('test/-db',function(req,res){
         }
     });
 });
-    
+  */  
 
 var app = express();
 app.use(morgan('combined'));
