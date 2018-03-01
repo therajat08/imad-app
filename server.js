@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 
-/*var config = {
+var config = {
     user: 'rajatnegi13',
     database: 'rajatnegi13',
     host: 'rajatnegi13@ssh.imad.hasura-app.io',
@@ -12,17 +12,24 @@ var Pool = require('pg').Pool;
 };
 
 var pool = new Pool('config');
-app.get('test/-db',function(req,res){
-    
-    pool.query('SELECT * FROM test', function(err,result){
-        if (err) {
-            res.status(500).send(err.toString());
-        } else{
-            res.send(JSON.stringfy(result));
-        }
-    });
+app.get('/test-db',function(req,res)
+{
+	//make a query
+		//return a response
+	pool.query('select * from test',function(err,result) 
+    { 
+		if(err)
+        {
+			res.status(500).send(err.toString());
+		}
+		else
+        {
+			res.send(JSON.stringify(result.rows)); 
+		}
+	});
+
 });
-  */  
+  
 
 var app = express();
 app.use(morgan('combined'));
